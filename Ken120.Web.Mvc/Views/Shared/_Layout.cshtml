@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>@ViewBag.Title</title>
+
+    @foreach (var meta in ViewBag.Metas)
+    {
+        <meta name="@meta.Key" content="@meta.Value" />
+    }
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+
+    @if (Context.Kentico().PageBuilder().EditMode)
+    {
+        if (ConfigurationHelper.IsReleaseBuild())
+        {
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.min.js"></script>
+        }
+        else
+        {
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
+        }
+    }
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/jquery-unobtrusive-ajax")
+    @Scripts.Render("~/bundles/jquery-validation")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

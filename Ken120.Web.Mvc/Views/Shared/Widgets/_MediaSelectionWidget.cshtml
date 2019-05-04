@@ -1,0 +1,29 @@
+﻿@using Ken120.Web.Mvc.Features.PageBuilders.InlineEditors
+@using Ken120.Web.Mvc.Features.PageBuilders.Widgets.MediaSelections
+
+@model MediaSelectionWidgetViewModel
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_MediaSelectionEditor",
+        new MediaSelectionEditorViewModel
+        {
+            PropertyName = nameof(MediaSelectionWidgetProperties.MediaLibraryItemGuid),
+            PermanentUrl = Model.PermanentUrl,
+            Title = Model.Title,
+            HostUrl = Model.HostUrl
+        });
+}
+else
+{
+    if (string.IsNullOrEmpty(Model.PermanentUrl))
+    {
+        return;
+    }
+
+    string url = Url
+      .Kentico()
+      .ImageUrl(Model.PermanentUrl, SizeConstraint.MaxWidthOrHeight(Model.MaxSideSize));
+
+    <p><img src="@url" alt="@Model.Title" /></p>
+}

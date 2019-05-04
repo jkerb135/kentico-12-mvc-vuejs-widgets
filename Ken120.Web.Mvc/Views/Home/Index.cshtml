@@ -1,0 +1,22 @@
+﻿@model Ken120.Web.Mvc.Features.Home.IndexViewModel
+
+@section styles
+{
+    @Html.Kentico().PageBuilderStyles()
+}
+
+@section scripts
+{
+    @Html.Kentico().PageBuilderScripts()
+}
+
+<h1>@Model.Greeting</h1>
+
+<div class="row">
+
+    <div class="col">
+        <h3>Today's featured image</h3>
+        @Html.Kentico().EditableArea("area1", allowedWidgets: AreaRestrictionHelper.GeHomePageRestrictions())
+    </div>
+
+</div>

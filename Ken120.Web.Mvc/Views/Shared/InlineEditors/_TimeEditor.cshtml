@@ -1,0 +1,12 @@
+﻿@using Ken120.Web.Mvc.Features.PageBuilders.InlineEditors
+
+@model  TimeEditorViewModel
+
+@using (Html.Kentico().BeginInlineEditor("time-editor", Model.PropertyName,
+    new
+    {
+        @class = "time-editor",
+    }))
+{
+    <p>Select a time: <input value="@Model.Time.ToShortTimeString()" /></p>
+}

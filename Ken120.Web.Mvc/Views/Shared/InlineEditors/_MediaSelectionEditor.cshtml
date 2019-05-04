@@ -1,0 +1,24 @@
+﻿@using Ken120.Web.Mvc.Features.PageBuilders.InlineEditors
+
+@model MediaSelectionEditorViewModel
+
+@{
+    string id = @Html.GenerateUniqueId("mediaSelectionEditor");
+}
+
+@using (Html.Kentico().BeginInlineEditor("media-selection-editor",
+    Model.PropertyName,
+    new
+    {
+        @class = "media-selection-editor",
+        data_host_url = Model.HostUrl,
+        data_current_media = Model.PermanentUrl,
+        data_id = id
+    }))
+{
+    <div id="@id">
+        <media-selection-editor :host-url="hostUrl"
+                                :selected-media-url="selectedMediaUrl"
+                                v-on:dispatch="onDispatch($event)"></media-selection-editor>
+    </div>
+}

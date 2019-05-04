@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2FE58BC-B07E-4ED9-AD84-27BAFED32464}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ken120.Web.Mvc</RootNamespace>
+    <AssemblyName>Ken120.Web.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extras.DynamicProxy">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Autofac.Mvc5">
+      <Version>4.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Autofac.WebApi2">
+      <Version>4.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Castle.Core" Version="4.3.1" />
+    <PackageReference Include="Castle.Windsor" Version="5.0.0" />
+    <PackageReference Include="jQuery">
+      <Version>3.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="jQuery.Validation">
+      <Version>1.17.0</Version>
+    </PackageReference>
+    <PackageReference Include="Kentico.AspNet.Mvc" Version="12.0.10" />
+    <PackageReference Include="Kentico.LanguagePack.English" Version="12.0.10" />
+    <PackageReference Include="Kentico.Libraries" Version="12.0.10" />
+    <PackageReference Include="Microsoft.ApplicationInsights">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.Agent.Intercept">
+      <Version>2.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.DependencyCollector">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.PerfCounterCollector">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.TraceListener">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.Web">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.WindowsServer">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel">
+      <Version>2.9.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.Mvc.Futures">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.7" />
+    <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.7" />
+    <PackageReference Include="Microsoft.Azure.Search" Version="5.0.3" />
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="2.0.1" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation">
+      <Version>3.2.11</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Owin" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb">
+      <Version>4.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Owin.Security" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.Security.Cookies" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="NuGet.Core" Version="2.14.0" />
+    <PackageReference Include="Owin" Version="1.0" />
+    <PackageReference Include="Rx-Core" Version="2.2.5" />
+    <PackageReference Include="Rx-Interfaces" Version="2.2.5" />
+    <PackageReference Include="Rx-Linq" Version="2.2.5" />
+    <PackageReference Include="Rx-Main" Version="2.2.5" />
+    <PackageReference Include="Rx-PlatformServices" Version="2.2.5" />
+    <PackageReference Include="Serilog">
+      <Version>2.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Sinks.File">
+      <Version>4.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Sinks.RollingFile">
+      <Version>3.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.HashFunction.Core" Version="2.0.0" />
+    <PackageReference Include="System.Data.HashFunction.CRC" Version="2.0.0" />
+    <PackageReference Include="System.Data.HashFunction.Interfaces" Version="2.0.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    <PackageReference Include="WebGrease" Version="1.6.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+    <PackageReference Include="X.PagedList">
+      <Version>7.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="X.PagedList.Mvc">
+      <Version>7.6.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\InlineEditors\MediaSelectionEditor\media-selection-editor.js" />
+    <Content Include="Content\InlineEditors\TimeEditor\jquery-timepicker\jquery.timepicker.js" />
+    <Content Include="Content\InlineEditors\TimeEditor\time-editor.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\addressSelector.js" />
+    <Content Include="Scripts\countryStateSelector.js" />
+    <Content Include="Scripts\formAutoPost.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\map.js" />
+    <Content Include="Scripts\variantSelector.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Dependencies\Registrations\ApiRegistration.cs" />
+    <Compile Include="Configuration\Dependencies\Registrations\ApplicationRegistration.cs" />
+    <Compile Include="Configuration\Dependencies\Registrations\CmsRegistration.cs" />
+    <Compile Include="Configuration\Dependencies\Registrations\MvcRegistration.cs" />
+    <Compile Include="Configuration\Pipeline\AntiForgeryTokenFilterProvider.cs" />
+    <Compile Include="Configuration\Pipeline\ApplicationConfig.cs" />
+    <Compile Include="Configuration\Pipeline\BundleConfig.cs" />
+    <Compile Include="Configuration\Pipeline\CoreApiRouteRegistry.cs" />
+    <Compile Include="Configuration\Pipeline\CoreMvcRouteRegistry.cs" />
+    <Compile Include="Configuration\Pipeline\DisableAntiForgeryCheckAttribute.cs" />
+    <Compile Include="Configuration\Pipeline\IRouteRegistry.cs" />
+    <Compile Include="Configuration\Pipeline\MetaTagActionFilterAttribute.cs" />
+    <Compile Include="Configuration\Pipeline\RouteConfig.cs" />
+    <Compile Include="Configuration\Dependencies\DependencyResolverConfig.cs" />
+    <Compile Include="Configuration\Dependencies\KenticoRegistrationSource.cs" />
+    <Compile Include="Configuration\Pipeline\WebApiConfig.cs" />
+    <Compile Include="ErrorHandling\ApiError.cs" />
+    <Compile Include="ErrorHandling\ApiExceptionResult.cs" />
+    <Compile Include="ErrorHandling\GlobalApiExceptionHandler.cs" />
+    <Compile Include="ErrorHandling\HttpErrorsRouteRegistry.cs" />
+    <Compile Include="Features\CmsAdmin\CmsAdminRouteRegistry.cs" />
+    <Compile Include="Features\Home\HomePageQuery.cs" />
+    <Compile Include="Features\Home\HomeRouteRegistry.cs" />
+    <Compile Include="Features\Home\IHomePageQuery.cs" />
+    <Compile Include="Features\PageBuilders\InlineEditors\MediaSelectionEditorViewModel.cs" />
+    <Compile Include="Features\PageBuilders\InlineEditors\TimeEditorViewModel.cs" />
+    <Compile Include="Features\PageBuilders\Sections\SingleColumnSectionController.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\DateTimeSelectors\DateTimeSelectorWidgetController.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\DateTimeSelectors\DateTimeSelectorWidgetProperties.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\DateTimeSelectors\DateTimeSelectorWidgetViewModel.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\MediaSelections\IMediaFileQuery.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\MediaSelections\KenticoMediaFileQuery.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\MediaSelections\MediaSelectionWidgetProperties.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\MediaSelections\MediaSelectionWidgetController.cs" />
+    <Compile Include="Features\PageBuilders\Widgets\MediaSelections\MediaSelectionWidgetViewModel.cs" />
+    <Compile Include="ErrorHandling\ApplicationInsightsHandleErrorAttribute.cs" />
+    <Compile Include="ErrorHandling\HttpErrorsController.cs" />
+    <Compile Include="Features\CmsAdmin\CmsAdminRedirectController.cs" />
+    <Compile Include="Features\Home\HomeController.cs" />
+    <Compile Include="Features\Home\IndexViewModel.cs" />
+    <Compile Include="Configuration\Pipeline\FilterConfig.cs" />
+    <Compile Include="Features\Home\PageTypes\HomePage.cs" />
+    <Compile Include="Features\Home\PageTypes\HomePageProvider.cs" />
+    <Compile Include="Features\Sites\DefaultSiteMetaService.cs" />
+    <Compile Include="Features\Sites\ISiteMeta.cs" />
+    <Compile Include="Features\Sites\ISiteMetaService.cs" />
+    <Compile Include="Features\Sites\MetaViewModel.cs" />
+    <Compile Include="Features\Sites\SiteController.cs" />
+    <Compile Include="Features\Sites\SiteMeta.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Caching\CacheDependencyAttribute.cs" />
+    <Compile Include="Infrastructure\Caching\CachingQueryDecorator.cs" />
+    <Compile Include="Infrastructure\Caching\ContentItemMetadataProvider.cs" />
+    <Compile Include="Infrastructure\Caching\KenticoCmsCacheSettings.cs" />
+    <Compile Include="Infrastructure\Caching\ICmsCacheSettings.cs" />
+    <Compile Include="Infrastructure\ControllerNameExtensions.cs" />
+    <Compile Include="Infrastructure\Caching\ICacheKey.cs" />
+    <Compile Include="Infrastructure\Caching\IContentItemMetadataProvider.cs" />
+    <Compile Include="Infrastructure\Caching\IOutputCacheDependencies.cs" />
+    <Compile Include="Infrastructure\Kentico\ICmsPreviewSettings.cs" />
+    <Compile Include="Infrastructure\Kentico\ICmsRequestContext.cs" />
+    <Compile Include="Infrastructure\Kentico\InlineEditorViewModel.cs" />
+    <Compile Include="Infrastructure\Kentico\IPageBuilderInitializer.cs" />
+    <Compile Include="Infrastructure\Caching\OutputCacheDependencies.cs" />
+    <Compile Include="Infrastructure\Kentico\HttpContextPageBuilderInitializer.cs" />
+    <Compile Include="Infrastructure\Caching\PagesCacheDependencyAttribute.cs" />
+    <Compile Include="Infrastructure\Kentico\KenticoCmsPreviewSettings.cs" />
+    <Compile Include="Infrastructure\Kentico\KenticoRequestContext.cs" />
+    <Compile Include="Configuration\Kentico\AzureStorageModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Views\ViewHelpers\AreaRestrictionHelper.cs" />
+    <Compile Include="Views\ViewHelpers\ConfigurationHelper.cs" />
+    <Compile Include="Views\ViewHelpers\HtmlHelperExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\AppSettings.config" />
+    <Content Include="App_Config\ConnectionStrings.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Shared\Sections\_SingleColumnSection.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Views\Shared\Widgets\_DateTimeSelectorWidget.cshtml" />
+    <Content Include="Views\Shared\InlineEditors\_TimeEditor.cshtml" />
+    <Content Include="Views\Shared\InlineEditors\_MediaSelectionEditor.cshtml" />
+    <Content Include="Views\Shared\Widgets\_MediaSelectionWidget.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Global\Resources\Kentico.Builder.resx" />
+    <Content Include="App_Data\Global\Resources\Kentico.FormBuilder.resx" />
+    <Content Include="App_Data\Global\Resources\Kentico.PageBuilder.resx" />
+    <Content Include="Kentico\Content\FormComponents\USPhone\dependencyLibs\inputmask.dependencyLib.js" />
+    <Content Include="Kentico\Content\FormComponents\USPhone\inputmask.js" />
+    <Content Include="Kentico\Content\InlineEditors\DropdownEditor\dropdown-editor.js" />
+    <Content Include="Kentico\Content\InlineEditors\DropdownEditor\DropdownEditor.css" />
+    <Content Include="Kentico\Scripts\builders\builder.css" />
+    <Content Include="Kentico\Scripts\builders\builder.js" />
+    <Content Include="Kentico\Scripts\builders\components\chunk-23822014.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\chunk-35672d9b.js" />
+    <Content Include="Kentico\Scripts\builders\components\chunk-435e0462.js" />
+    <Content Include="Kentico\Scripts\builders\components\chunk-b2fc85a4.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\components.core.js" />
+    <Content Include="Kentico\Scripts\builders\components\components.core.pf.js" />
+    <Content Include="Kentico\Scripts\builders\components\components.global.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-add-component-button.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-add-component-button.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-add-component.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-add-component.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-add-component.sc.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-add-component.sc.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-alert-box.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-alert-box.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-alert-box.sc.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-alert-box.sc.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-dialog-header.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-dialog-header.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-dialog-header.sc.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-dialog-header.sc.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-drop-marker.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-drop-marker.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-drop-marker.sc.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-drop-marker.sc.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-form-modal-dialog.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-form-modal-dialog.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-personalization-button.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-personalization-button.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-pop-up-container.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-pop-up-container.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-section-divider.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-section-divider.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-section-divider.sc.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-section-divider.sc.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-section-header.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-section-header.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-submit-button.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-submit-button.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-submit-button.sc.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-submit-button.sc.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-widget-header.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-widget-header.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-widget-properties-button.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-widget-properties-button.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-widget-properties-button.sc.es5.js" />
+    <Content Include="Kentico\Scripts\builders\components\kentico-widget-properties-button.sc.js" />
+    <Content Include="Kentico\Scripts\builders\Core-icons.eot" />
+    <Content Include="Kentico\Scripts\builders\Core-icons.svg" />
+    <Content Include="Kentico\Scripts\builders\Core-icons.ttf" />
+    <Content Include="Kentico\Scripts\builders\Core-icons.woff" />
+    <Content Include="Kentico\Scripts\builders\form-builder.css" />
+    <Content Include="Kentico\Scripts\builders\form-builder.js" />
+    <Content Include="Kentico\Scripts\builders\page-builder.css" />
+    <Content Include="Kentico\Scripts\builders\page-builder.js" />
+    <Content Include="Kentico\Scripts\builders\vendors.js" />
+    <Content Include="Kentico\Scripts\forms\updatableFormHelper.js" />
+    <Content Include="Kentico\Scripts\jquery-3.3.1.js" />
+    <Content Include="Kentico\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Kentico\Scripts\shim.min.js" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52350</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

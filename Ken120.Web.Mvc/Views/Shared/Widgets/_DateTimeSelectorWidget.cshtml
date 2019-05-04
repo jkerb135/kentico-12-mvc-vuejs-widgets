@@ -1,0 +1,23 @@
+﻿@using Ken120.Web.Mvc.Features.PageBuilders.InlineEditors
+@using Ken120.Web.Mvc.Features.PageBuilders.Widgets.DateTimeSelectors
+
+@model  DateTimeSelectorWidgetViewModel
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    Html.RenderPartial("InlineEditors/_CalendarEditor", new CalendarEditorViewModel
+    {
+        PropertyName = nameof(DateTimeSelectorWidgetProperties.Date),
+        Date = Model.Date,
+    });
+
+    Html.RenderPartial("InlineEditors/_TimeEditor", new TimeEditorViewModel
+    {
+        PropertyName = nameof(DateTimeSelectorWidgetProperties.Time),
+        Time = Model.Time
+    });
+}
+else
+{
+    <p>@Model.DateTimeContent @Model.Date.ToShortDateString() @Model.Time.ToShortTimeString()</p>
+}

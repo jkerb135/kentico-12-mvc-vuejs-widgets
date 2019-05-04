@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Concurrent;
+
+using CMS.DataEngine;
+using CMS.DocumentEngine;
+
+namespace Ken120.Web.Mvc.Infrastructure.Caching
+{
+    /// <summary>
+    /// Provides information about pages and info objects using their runtime type.
+    /// This class is thread-safe and class names and object types are normalized, i.e. they are converted to lowercase.
+    /// </summary>
+    public sealed class ContentItemMetadataProvider : IContentItemMetadataProvider
+    {
+        private readonly ConcurrentDictionary<Type, string> mClassNames = new ConcurrentDictionary<Type, string>();
+        private readonly ConcurrentDictionary<Type, string> mObjectTypes = new ConcurrentDictionary<Type, string>();
+
+
+        /// <summary>
+        /// Returns a class name of a page.
+        /// </summary>
+        /// <param name="type">Runtime type that represents pages, i.e. it is derived from the <see cref="TreeNode"/> class.</param>
+        /// <returns>Lowercase class name of a page.</returns>
+        public string GetClassNameFromPageRuntimeType(Type type) => mClassNames.GetOrAdd(type, x => ((TreeNode)Activator.CreateInstance(type)).ClassName.ToLowerInvariant());
+
+
+        /// <summary>
+        /// Returns a class name of a page.
+        /// </summary>
+        /// <typeparam name="T">Runtime type that represents pages, i.e. it is derived from the <see cref="TreeNode"/> class.</typeparam>
+        /// <returns>Lowercase class name of a page.</returns>
+        public string GetClassNameFromPageRuntimeType<T>() where T : TreeNode, new() => mClassNames.GetOrAdd(typeof(T), x => new T().ClassName.ToLowerInvariant());
+
+
+        /// <summary>
+        /// Returns an object type of an info object.
+        /// </summary>
+        /// <param name="type">Runtime type that represents info objects, i.e. it is derived from the <see cref="AbstractInfo{TInfo}"/> class.</param>
+        /// <returns>Lowercase object type of an info object.</returns>
+        public string GetObjectTypeFromInfoObjectRuntimeType(Type type) => mObjectTypes.GetOrAdd(type, x => ((BaseInfo)Activator.CreateInstance(type)).TypeInfo.ObjectType.ToLowerInvariant());
+
+
+        /// <summary>
+        /// Returns an object type of an info object.
+        /// </summary>
+        /// <typeparam name="T">Runtime type that represents info objects, i.e. it is derived from the <see cref="AbstractInfo{TInfo}"/> class.</typeparam>
+        /// <returns>Lowercase object type of an info object.</returns>
+        public string GetObjectTypeFromInfoObjectRuntimeType<T>() where T : AbstractInfo<T>, new() => mObjectTypes.GetOrAdd(typeof(T), x => new T().TypeInfo.ObjectType.ToLowerInvariant());
+    }
+}
